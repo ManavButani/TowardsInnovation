@@ -48,10 +48,14 @@ headers = {
   'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
-result = response.json().get("chart").get("result")[0]
-timestamp = result.get("timestamp")
-indicators = result.get("indicators").get("quote")[0]
+try:
+  response = requests.request("GET", url, headers=headers, data=payload)
+  result = response.json().get("chart").get("result")[0]
+  timestamp = result.get("timestamp")
+  indicators = result.get("indicators").get("quote")[0]
+except Exception as e:
+  print("Failed to fetch data by request")
+  exit()
 
 df = pd.DataFrame({
     'time': list(map(lambda x: datetime.utcfromtimestamp(x) + timedelta(hours=5,minutes=30), timestamp)),
