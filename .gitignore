@@ -1,3 +1,4 @@
+
 # Ignore image files
 *.jpg
 *.jpeg
@@ -19,3 +20,8 @@
 **/*.jpg
 **/*.mp4
 *.png
+
+.venv
+venv/
+.vscode
+*.webm
