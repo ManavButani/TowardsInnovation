@@ -1,0 +1,23 @@
+for all candles
+    high - low = postive
+    high - close = positive / zero
+    high - open = positive
+    low - open = negative / zero
+    low - close = negative / zero
+
+RED Candles
+    open > close
+    open - close = positive
+    upper wick
+    lower wick
+
+Green Candles
+    close > open
+    open - close = negative
+    upper wick
+    lower wick
+
+
+high shadow = high - max(open, close) / always positive or zero
+low shadow = low - min(open, close) / always negative or zero
+
