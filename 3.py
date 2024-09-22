@@ -1,9 +1,10 @@
 import yt_dlp
 
+ydl_opts ={}
 ydl_opts = {
     'format': 'bestvideo[height<=720]+bestaudio',  # 720p video
     # 'outtmpl': '%(title)s.%(ext)s',  # Set output filename format
-    # 'merge_output_format': 'mp4',    # Ensure video and audio are merged into MP4
+    'output_format': 'mp4',    # Ensure video and audio are merged into MP4
     # 'postprocessors': [{
     #     'key': 'FFmpegVideoConvertor',
     #     'preferedformat': 'mp4'      # Convert to mp4 after downloading
@@ -18,23 +19,29 @@ channel = 1
 while channel == 1:
     # link_of_the_video = input("Copy & paste the URL of the YouTube video you want to download: ")
     # zxt = link_of_the_video.strip()
+    downloaded = []
     for url in [
-# 'https://youtu.be/jvNFWJCNLSg?si=dKEU-K94w01LHTVF',
-# 'https://youtu.be/R-gmTmrJJ1g?si=s2CLJFzXnyZybwbU',
-# 'https://youtu.be/QVV6D-wwAMQ?si=r1vFxQjyhm1DP7Ov',
-# 'https://youtu.be/wKvjbay_CW0?si=ZbA0UYr0RHK7eI76',
-# 'https://youtu.be/yj6Rulvi4yo?si=SJT8dSf4iCfQX9dn',
-# 'https://youtu.be/biZSPM0XJAM?si=G_e90pQo8HFtVdIu',
-# 'https://youtu.be/g4N_ijMbhuE?si=ZcE38wxyXm20CVD0',
-# 'https://youtu.be/ykPZi511fDc?si=PEsO_pw1qLHxR5Wk',
-# 'https://youtu.be/R7hL5YNGA8c?si=B47UZvj4Ie8omt3U',
-# 'https://youtu.be/tfIIBLUSnWc?si=wuV3kIE0cnMx0qlv',
-'https://youtu.be/j2irsMtBshQ?si=gK7BPfpn6rm9LM6F',
-'break'
+# 'https://www.youtube.com/watch?v=H7s0dYHC0_c'
+# 'https://www.youtube.com/watch?v=yoRllwA1P0Y'
+# 'https://www.youtube.com/watch?v=MYa67CegX18'
+# 'https://www.youtube.com/watch?v=ZzVmGg4AaL4',
+# 'https://www.youtube.com/watch?v=QSibwmqv9I8',
+# 'https://www.youtube.com/watch?v=6XeoyLGMmGQ',
+# 'https://www.youtube.com/watch?v=GjRK385t2XI',
+# 'https://www.youtube.com/watch?v=Z9zwUzMcbEg',
+# 'https://www.youtube.com/watch?v=Dq7qSaVjZR4',
+# 'https://www.youtube.com/watch?v=rzAPFYrVvyQ',
+# 'https://www.youtube.com/watch?v=VjA1c6GlU1M',
+# 'https://www.youtube.com/watch?v=jZQskY4O4xk',
+# 'https://www.youtube.com/watch?v=7Lfi7rfRjr0',
+# 'https://www.youtube.com/watch?v=98efa_DisZ0',
+# 'https://www.youtube.com/watch?v=aHMbXaLBD9Q',
+# 'https://www.youtube.com/watch?v=KbE2J2qWWcs',
+# 'https://www.youtube.com/watch?v=v4b--kcS_iw',
 ]:
-        if url=='break':
-            exit()
-        dwl_vid(url.strip())
+        if url not in downloaded:
+            dwl_vid(url.strip())
+            downloaded.append(url)
     # channel = int(input("Enter 1 if you want to download more videos\nEnter 0 if you are done: "))
 
 
