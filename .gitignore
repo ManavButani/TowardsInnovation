@@ -18,3 +18,12 @@
 # Ignore files in any subdirectory as well
 **/*.jpg
 **/*.mp4
+*.png
+
+.venv
+venv/
+.vscode
+*.webm
+
+
+*.csv
