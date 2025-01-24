@@ -1,0 +1,14 @@
+ 869  git config --global credential.helper
+  870  git credential-manager clear
+
+
+Let's say you are on feature-branch and you want to fetch the config.yaml file from the develop branch to your current branch. You would run:
+
+bash
+Copy
+git checkout develop -- config.yaml
+
+ git remote set-url origin https://github.com/ManavButani/TowardsInnovation.git
+
+git config --global user.email "manavkrenil@gmail.com"
+  871  git config --global user.name "ManavButani"
