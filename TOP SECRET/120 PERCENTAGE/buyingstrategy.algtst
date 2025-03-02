@@ -1,0 +1,143 @@
+{
+  "version": "0.6",
+  "name": "Buying Strategy",
+  "strategy": {
+    "Ticker": "SENSEX",
+    "TakeUnderlyingFromCashOrNot": "True",
+    "TrailSLtoBreakeven": "False",
+    "SquareOffAllLegs": "True",
+    "EntryIndicators": {
+      "Type": "IndicatorTreeNodeType.OperandNode",
+      "OperandType": "OperandType.And",
+      "Value": [
+        {
+          "Type": "IndicatorTreeNodeType.DataNode",
+          "Value": {
+            "IndicatorName": "IndicatorType.TimeIndicator",
+            "Parameters": {
+              "Hour": 9,
+              "Minute": 16
+            }
+          }
+        }
+      ]
+    },
+    "ExitIndicators": {
+      "Type": "IndicatorTreeNodeType.OperandNode",
+      "OperandType": "OperandType.And",
+      "Value": [
+        {
+          "Type": "IndicatorTreeNodeType.DataNode",
+          "Value": {
+            "IndicatorName": "IndicatorType.TimeIndicator",
+            "Parameters": {
+              "Hour": 15,
+              "Minute": 15
+            }
+          }
+        }
+      ]
+    },
+    "StrategyType": "StrategyType.IntradaySameDay",
+    "MaxPositionInADay": 1,
+    "ReentryTimeRestriction": "None",
+    "ListOfLegConfigs": [
+      {
+        "PositionType": "PositionType.Buy",
+        "Lots": 1,
+        "LegStopLoss": {
+          "Type": "LegTgtSLType.Points",
+          "Value": 75
+        },
+        "LegTarget": {
+          "Type": "LegTgtSLType.Points",
+          "Value": 350
+        },
+        "LegTrailSL": {
+          "Type": "None",
+          "Value": {}
+        },
+        "LegMomentum": {
+          "Type": "MomentumType.PercentageUp",
+          "Value": 120
+        },
+        "ExpiryKind": "ExpiryType.Weekly",
+        "EntryType": "EntryType.EntryByPremium",
+        "StrikeParameter": 50,
+        "InstrumentKind": "LegType.CE",
+        "LegReentrySL": {
+          "Type": "None",
+          "Value": {}
+        },
+        "LegReentryTP": {
+          "Type": "None",
+          "Value": {}
+        },
+        "id": "atba40q1"
+      },
+      {
+        "PositionType": "PositionType.Buy",
+        "Lots": 1,
+        "LegStopLoss": {
+          "Type": "LegTgtSLType.Points",
+          "Value": 75
+        },
+        "LegTarget": {
+          "Type": "LegTgtSLType.Points",
+          "Value": 350
+        },
+        "LegTrailSL": {
+          "Type": "None",
+          "Value": {}
+        },
+        "LegMomentum": {
+          "Type": "MomentumType.PercentageUp",
+          "Value": 120
+        },
+        "ExpiryKind": "ExpiryType.Weekly",
+        "EntryType": "EntryType.EntryByPremium",
+        "StrikeParameter": 50,
+        "InstrumentKind": "LegType.PE",
+        "LegReentrySL": {
+          "Type": "None",
+          "Value": {}
+        },
+        "LegReentryTP": {
+          "Type": "None",
+          "Value": {}
+        },
+        "id": "h4h4ld7x"
+      }
+    ],
+    "IdleLegConfigs": {},
+    "OverallSL": {
+      "Type": "None",
+      "Value": 0
+    },
+    "OverallTgt": {
+      "Type": "None",
+      "Value": 0
+    },
+    "OverallReentrySL": {
+      "Type": "None",
+      "Value": {}
+    },
+    "OverallReentryTgt": {
+      "Type": "None",
+      "Value": {}
+    },
+    "OverallTrailSL": {
+      "Type": "None",
+      "Value": {}
+    },
+    "LockAndTrail": {
+      "Type": "None",
+      "Value": {}
+    },
+    "WeeklyOldRegime": false
+  },
+  "attributes": {
+    "template": "Straddle920",
+    "positional": "False"
+  }
+}

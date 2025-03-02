@@ -1,0 +1,21 @@
+# Ignore image files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+
+# Ignore video files
+*.mp4
+*.avi
+*.mkv
+*.mov
+
+# Ignore other large media files (optional)
+*.mp3
+*.wav
+
+# Ignore files in any subdirectory as well
+**/*.jpg
+**/*.mp4
+**/*.webm
