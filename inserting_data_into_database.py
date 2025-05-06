@@ -26,7 +26,7 @@ symbol_data_list = []
 # 5. Fetch and prepare data for each symbol
 for symbol in symbols:
     print(f"📥 Downloading data for {symbol}...")
-    data = yf.download(symbol, start='2025-01-01', end='2025-04-20', interval='1d')
+    data = yf.download(symbol, start='2024-01-01', end='2025-05-04', interval='1d')
 
     if data.empty:
         print(f"⚠️ No data for {symbol}, skipping.")
