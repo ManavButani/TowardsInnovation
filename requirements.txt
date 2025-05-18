@@ -1,0 +1,4 @@
+jugaad-data
+yfinance
+pandas
+sqlalchemy
