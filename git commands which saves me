@@ -1,5 +1,0 @@
-git rm --cached *.png           # Untrack PNG files
-echo "*.png" >> .gitignore       # Add PNG files to .gitignore
-git add .gitignore               # Stage .gitignore changes
-git commit -m "Remove PNG files from tracking and update .gitignore"  # Commit
-git push -f
