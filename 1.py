@@ -40,6 +40,8 @@ df['dmi_atr'] = DMI_result.atr(10)
 
 # df['parabolic_sar'] = FAST_SAR(df['high'].values, df['low'].values)
 
+supertrend_result = SUPERTREND(df, 10, 3)
+df = pd.concat([df['date'], supertrend_result[['supertrend', 'final_lowerband', 'final_upperband']]], axis=1)
 
 df.to_csv("reliance_1d_spot_supertrend.csv", index=False)
 
