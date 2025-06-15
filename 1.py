@@ -1,6 +1,7 @@
 from tradingview_indicators import *
 import pandas as pd
 import math
+from trading_view_indicators.DMI import DMI
 # from trading_view_indicators.DMI import DMI
 # from trading_view_indicators.parabolic_sar import FAST_SAR, SAR
 # from trading_view_indicators.supertrend import SUPERTREND
@@ -23,18 +24,18 @@ df = pd.read_csv("reliance_1d_spot.csv")
 # df['typical_price'] = (df['high'] + df['low'] + df['close'])/3
 # df['cci_sma'] = CCI(source=df['typical_price'], method="sma")["CCI"]
 
-# DMI_result = DMI(
-#     dataframe=df,
-#     close="close",
-#     high="high",
-#     low="low"
-# )
+DMI_result = DMI(
+    dataframe=df,
+    close="close",
+    high="high",
+    low="low"
+)
 
-# df['dmi_atr'] = DMI_result.atr(10)
-# adx, plus, minus =  DMI_result.adx()
-# df['dmi_adx'] = adx
-# df['dmi_plus'] = plus
-# df['dmi_minus'] = minus
+df['dmi_atr'] = DMI_result.atr(10)
+adx, plus, minus =  DMI_result.adx()
+df['dmi_adx'] = adx
+df['dmi_plus'] = plus
+df['dmi_minus'] = minus
 
 # df['parabolic_sar'] = SAR(df, af_start=0.02, af_step=0.02, af_max=0.2)
 
